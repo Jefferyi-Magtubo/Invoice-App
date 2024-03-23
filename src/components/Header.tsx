@@ -1,7 +1,7 @@
 import React from "react"
 import { Outlet } from "react-router-dom"
 
-export default function Header() {
+export default function Header( {darkMode , setDarkMode} : {darkMode: boolean , setDarkMode: Function} ) {
 
     return(
         <>
@@ -10,9 +10,11 @@ export default function Header() {
                     <img src="src/assets/logo.svg" />
                 </div>
                 <div className="ml-auto flex items-center justify-around">
-                    <img src="src/assets/icon-moon.svg" className="m-2" />
+                    {darkMode ? 
+                        <img src="src/assets/icon-sun.svg" onClick={()=> setDarkMode((prev : boolean) => !prev)} className="m-2" /> : 
+                        <img src="src/assets/icon-moon.svg" onClick={()=> setDarkMode((prev : boolean) => !prev)}  className="m-2" />}
                     <div className="w-px h-full bg-lightPurple m-2"></div>
-                    <img src="src/assets/jeff.jpg" className="w-6 h-6 rounded-3xl m-2"/>
+                    <img src="src/assets/jeff.jpg" className="w-6 h-6 rounded-3xl m-4"/>
                 </div>
             </header>  
             <Outlet />
