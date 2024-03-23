@@ -17,7 +17,9 @@ export default {
         'lightPurple' : "#494E6E",
         'darkGray' : "#373B53",
         'lightGray' : "#888EB0",
-        'darkModeBody' : "#1E2139"
+        'darkModeBody' : "#1E2139",
+        'darkModeSmallText' : "#DFE3FA",
+        'pending' : "#FF8F00"
       }
     },
   },

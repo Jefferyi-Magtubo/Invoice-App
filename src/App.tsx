@@ -3,6 +3,10 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header';
 import Home from './pages/Home';
+import Invoice from './pages/Invoice';
+import NewInvoice from './pages/NewInvoice';
+
+const darkContext = React.createContext<boolean | null>(null)
 
 function App() {
   
@@ -11,11 +15,10 @@ function App() {
   const hours = now.getHours()
 
   React.useEffect(() => {
-    if(hours > 19) {
+    if(hours > 19 || hours < 8) {
       setDarkMode(true)
     }
   }, [])
-
 
   React.useEffect(() => {
     if (darkMode) {
@@ -28,14 +31,21 @@ function App() {
   }, [darkMode]);
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Header darkMode={darkMode} setDarkMode={setDarkMode}/>}>
-          <Route index element={<Home />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <darkContext.Provider value={darkMode}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Header setDarkMode={setDarkMode}/>}>
+            <Route index element={<Home />} />
+            <Route path="invoice" element={<Invoice />} />
+            <Route path="new" element={<NewInvoice />} />
+            <Route path="new" element={<NewInvoice />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </darkContext.Provider>
   );
 }
 
 export default App;
+
+export {darkContext}

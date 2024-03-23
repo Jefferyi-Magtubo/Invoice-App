@@ -1,6 +1,8 @@
 import React from "react";
+import { darkContext } from "../App";
 
 export default function Home() {
+    const darkMode = React.useContext(darkContext)
 
     return (
         <div className=" h-100 p-0">
@@ -22,9 +24,9 @@ export default function Home() {
             </section>
             
             <section className="mx-auto mt-20 w-4/5 text-center">
-                <img src="src/assets/illustration-empty.svg" />
+                <img src="src/assets/illustration-empty.svg" className="w-100 mx-auto" />
                 <h1 className="text-2xl">There is nothing here</h1>
-                <p className="text-xs text-lightGray ">Create an invoice by clicking the New button and get started</p>
+                <p className={`text-xs  ${darkMode? "text-darkModeSmallText" : "text-lightGray" }`}>Create an invoice by clicking the New button and get started</p>
             </section>
         </div>
     );
