@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React from 'react';
 import './App.css';
-import Header from './components/Header';
+import Header from './components/Header';   
 import Home from './pages/Home';
 import Invoice from './pages/Invoice';
-import NewInvoice from './pages/NewInvoice';
+import InvoiceChange from './pages/InvoiceChange'
 
 const darkContext = React.createContext<boolean | null>(null)
 
@@ -37,8 +37,7 @@ function App() {
           <Route path="/" element={<Header setDarkMode={setDarkMode}/>}>
             <Route index element={<Home />} />
             <Route path="invoice" element={<Invoice />} />
-            <Route path="new" element={<NewInvoice />} />
-            <Route path="new" element={<NewInvoice />} />
+            <Route path="edit" element={<InvoiceChange />} />
           </Route>
         </Routes>
       </BrowserRouter>
