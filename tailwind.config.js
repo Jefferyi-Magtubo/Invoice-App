@@ -19,7 +19,8 @@ export default {
         'lightGray' : "#888EB0",
         'darkModeBody' : "#1E2139",
         'darkModeSmallText' : "#DFE3FA",
-        'pending' : "#FF8F00"
+        'pending' : "#FF8F00",
+        'darkModeSec' : "#252945"
       }
     },
   },
