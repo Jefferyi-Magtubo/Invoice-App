@@ -85,7 +85,7 @@ export default function InvoiceChange() {
                 <label htmlFor="description" className={`text-sm text-lightGray`}>Description</label>
                 <input {...register('description')} type="text" className="border block font-bold mb-16 py-2 px-4 w-full " id="description" />
 
-                <h1>Item List</h1>
+                <h1 className="font-bold text-lightGray">Item List</h1>
 
             </form>  
             
